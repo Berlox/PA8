@@ -1,6 +1,6 @@
 //This is a header file to mostly just for functions and structs to retrieve the values of the inventory.txt
 //CSE 222
-//Christian Dunn Dejan Mandic ft. "The other Kid" (sorry, never learned your name. I'll update it later.)
+//Christian Dunn Dejan Mandic ft. "The other Kid" (sorry, never learned your name. I'll update it later.) apparently whose name is Ben
 
 #include <stdlib.h>
 #include <stdio.h>
