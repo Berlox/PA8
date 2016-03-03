@@ -5,12 +5,9 @@ CSE 222 PA8
 */
 
 #include "fileops.h"
-
-int calls;
-
 int max(int a, int b) {return (a > b)? a:b;}
 int maxValue(inv_val* inv, int length); //returns the maxValue from the inventory.
-
+int calls;
 int main(int argc, char const *argv[]) {
   calls = 0;
   if (argc != 2) {
@@ -27,7 +24,7 @@ int main(int argc, char const *argv[]) {
     exit(1);
   }
   int value = maxValue(inv, length);
-  printf("Max value for length %d is %d %d\n", length, value, calls);
+  printf("Max value for length %d is %d\n", length, value);
 
   return 0;
 }
@@ -41,13 +38,18 @@ int maxValue(inv_val *inv, int length) {
   //if (length == 1) {
     //return inv->val[1];
   //}
-  int maxv = 0;
   calls++;
+  int maxv = 0;
+  int maxlength;
   int temp; //so we dnt have to calulate everything again.
   int i;
   for (i = 1; i <= length; i++) {
     maxv = max(maxv, (inv->val[i] + maxValue(inv, length - i)));
-    if (i > inv->size) continue; //if the value isnt in the array continue on.
+    if (i > inv->size) {
+      printf("Invalid Inventory File\n");
+      exit(0); //if the walue isnt in the exit.
+
+    }
   }
   return maxv;
 }
