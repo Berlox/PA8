@@ -1,16 +1,16 @@
 all: main
 
-main: testmain.o fileops.o
-	gcc -o  testf testmain.o fileops.o
+main: recMaxVal.o fileops.o
+	gcc -o  testf recMaxVal.o fileops.o
 
-testmain.o: testmain.c
-	gcc -c testmain.c
+recMaxVal.o: recMaxVal.c
+	gcc -c recMaxVal.c
 
 fileops.o: fileops.c
 	gcc -c fileops.c
 
-debug:
-	gcc -g testmain.c fileops.c -o debug
+debug: recMaxVal.c
+	gcc -g recMaxVal.c fileops.c -o debug
 
 clean:
 	rm *.o testf debug

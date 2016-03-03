@@ -37,3 +37,8 @@ int fetchData(const char *fn, inv_val* inv) {
   return 1; //if it made it this far, it should be good.
   close(fp);
 }
+
+void freeinv(inv_val *inv) {
+  free(inv->val);
+  free(inv);
+}
