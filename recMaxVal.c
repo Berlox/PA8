@@ -24,13 +24,14 @@ int main(int argc, char const *argv[]) {
     exit(1);
   }
   int value = maxValue(inv, length);
-  printf("Max value for length %d is %d\n", length, value);
+  printf("Max value for length %d is %d %d\n", length, value, calls);
 
   return 0;
 }
 
 
 int maxValue(inv_val *inv, int length) {
+  calls++;
   if (length <= 0) {
     //Base case
     return 0;
@@ -38,7 +39,6 @@ int maxValue(inv_val *inv, int length) {
   //if (length == 1) {
     //return inv->val[1];
   //}
-  calls++;
   int maxv = 0;
   int maxlength;
   int temp; //so we dnt have to calulate everything again.

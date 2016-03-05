@@ -1,16 +1,17 @@
 all: main
 
-main: recMaxVal.o fileops.o
-	gcc recMaxVal.o fileops.o -o testf
+main: FinalForm.o fileops.o
+	gcc FinalForm.o fileops.o -o testf
 
-recMaxVal.o: recMaxVal.c
-	gcc -c recMaxVal.c
+FinalForm.o: FinalForm.c
+	gcc -c FinalForm.c
 
 fileops.o: fileops.c
 	gcc -c fileops.c
 
-debug:
-	gcc -g recMaxVal.c fileops.c -o debug
+debug: fileops.c FinalForm.c
+	gcc -g FinalForm.c fileops.c -o debug
+	gdb debug
 
 clean:
 	rm *.o testf debug
