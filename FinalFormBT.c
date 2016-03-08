@@ -46,7 +46,6 @@ int main(int argc, char const *argv[]) {
   int value = maxValue(inv, length);
   printf("Max value for length %d is %d %d\n", length, value, calls);
 
-  freeinv(inv);
   return 0;
 }
 
