@@ -20,15 +20,18 @@ int CallMeMaybe( inv_val *inv, int length)
 
         maxval = inv->val[length];//sets the max val to be zero cuts (ie full length)
 
-
                 for (i = 1; i <= length; i++)
                 {
-                        for(j = 0; j<i;j++)
+//			printf("1st for loop i = %d, maxval = %d\n", i,maxval);
+                        for(j = 1; j<i;j++)
                         {
-                                if (maxval < inv->val[j] + store[(i-1)-j])
+//				printf("2nd for loop j = %d\n",j);
+                                if (maxval < (inv->val[j] + store[(i)]))
                                 {
+//					printf("IF LOOP HIT: i= %d  j= %d maxval = %d\n",i,j,maxval);
                                         maxval = inv->val[j] + store[(i-1)-j];
                                 }
+//				printf("After If statment maxval = %d\n", maxval);
                         }
 
                         store[i] = maxval;
