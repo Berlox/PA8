@@ -9,8 +9,6 @@ CSE 222 PA8
 
 struct Path { //a struct to hold the path, stored in an array of length based on how long the length is and a integer of how long the actual path is.
   int maxVal;
-  int *list;
-  int size; //how long the path is
   int found; //flag to see if we actually have found it yet.
 };
 
@@ -44,7 +42,7 @@ int main(int argc, char const *argv[]) {
     exit(1);
   }
   int value = maxValue(inv, length);
-  printf("Max value for length %d is %d %d\n", length, value, calls);
+  printf("Max value for length %d is %d # of calls: %d\n", length, value, calls);
 
 	printf("Starting Iterative\n");
 	int iterVal = CallMeMaybe(inv, length);
